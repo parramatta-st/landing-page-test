@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{scroll-behavior:smooth;}
+
+/*
+  Small animation-delay helpers (Tailwind doesn't ship these by default).
+  These help the blobs feel more organic instead of moving in sync.
+*/
+.animation-delay-1000{animation-delay:1s;}
+.animation-delay-2000{animation-delay:2s;}
+.animation-delay-3000{animation-delay:3s;}
+.animation-delay-4000{animation-delay:4s;}
+.animation-delay-6000{animation-delay:6s;}
+
+:root {
+  --brand-orange: #e15b26;
+  --brand-blue: #2ebadf;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand-orange) 28%, white);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Global "bubble" background styling                                          */
+/* -------------------------------------------------------------------------- */
+
+/*
+  These are intentionally NOT blurred.
+  We want crisp, bubble-like circles with a subtle highlight and a soft edge.
+*/
+.bubble-shape {
+opacity: 0.98;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.035);
+}
+
+.bubble-orange {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.62),
+    rgba(225, 91, 38, 0.26) 55%,
+    rgba(225, 91, 38, 0.14) 100%
+  );
+}
+
+.bubble-blue {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.62),
+    rgba(46, 186, 223, 0.26) 55%,
+    rgba(46, 186, 223, 0.18) 100%
+  );
+}
+
+.bubble-white {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.24) 55%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+}
+
